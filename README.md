@@ -62,34 +62,7 @@ python memory_agent.py
 
 ---
 
-## What I fixed from the course PDF
 
-The course material is broadly accurate — `create_agent`, the `@tool`
-decorator, `TavilySearch`, and `InMemorySaver` are all still the current,
-correct LangChain APIs. A few things were outdated or Colab-specific, though:
-
-1. **Gemini model name.** The PDF uses `gemini-2.5-flash`. Google's Flash
-   line has moved on since then (3.5 → 3.6 → 3.7 → 3.8 Flash as of Sept
-   2026), and older 2.x models are being progressively retired. I switched
-   the code to `google_genai:gemini-3.6-flash`, a currently GA model. If
-   Google ships a newer Flash model by the time you read this, just swap the
-   string — check https://ai.google.dev/gemini-api/docs/models for the
-   current list.
-
-2. **`google.colab.userdata`.** The PDF assumes you're running in Google
-   Colab and pulling secrets from Colab's secret manager. That only works
-   inside Colab notebooks. For a normal local/VS Code project, I switched to
-   `python-dotenv` reading a `.env` file — this is the standard approach
-   outside Colab and is what you'll want for a real, runnable project.
-
-3. **Nothing else needed changing** — `langchain.agents.create_agent`,
-   `langchain.chat_models.init_chat_model`, `langchain_tavily.TavilySearch`,
-   `langchain.tools.tool`, and `langgraph.checkpoint.memory.InMemorySaver`
-   all match current LangChain/LangGraph APIs as of Sept 2026. The JSearch
-   endpoint (`https://jsearch.p.rapidapi.com/search`) is also unchanged and
-   still active.
-
-## Next steps (from the "Try It Yourself" section)
 
 Once this runs, the same pattern (Tavily tool + one custom `@tool` + `create_agent`)
 extends directly to the other agent ideas in the course: Interview Prep Agent,
