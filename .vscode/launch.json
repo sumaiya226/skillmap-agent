@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run: agent.py (single question)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/agent.py",
+      "args": ["What's the demand for Generative AI and show me jobs in India"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Run: memory_agent.py (interactive chat)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/memory_agent.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
